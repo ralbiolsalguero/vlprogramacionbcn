@@ -71,7 +71,7 @@ public class Main {
             if((a*a) + (b*b) == (c*c) || (a*a) + (c*c) == (b*b) || (b*b) + (c*c) == (a*a)) {
                 System.out.println("Además es un triangulo rectangulo");
             }
-            
+
         }else{
             System.out.println("No es un triangulo válido");
         }

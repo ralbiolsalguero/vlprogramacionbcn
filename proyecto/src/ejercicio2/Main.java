@@ -1,5 +1,7 @@
 package ejercicio2;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         /*
@@ -40,5 +42,68 @@ public class Main {
         Programa terminado.
         *
         * */
+
+
+        /*
+        * INICIO
+        *
+        *   1. Hacemos un bucle do-while en el cual comprobamos que la palabra que nos introduzca no sea STOP. Si es STOP parar el programa.
+        *   2. Pedimos la cadena a cifrar.
+        *   3. Creamos un bucle for, empezando desde el 0, hasta la longitud de la cadena. Haciendo cada vuelta la traducción a codigo ASCII. (int codigo = (int) caracter;).
+        *   4. Según hagamos la traducción comprobamos si es par o impar. Si es impar restar 1 al resultado.
+            *   5. Si es par. Vamos a ir desde el 0 hasta la posición del codigo ASCII. H -> 10. 0<10 -> ++1. Con un bucle while
+            *   6. Añadir el guión, para ello comprobamos que no sea el último caracter.
+        *   7. Imprimir resultado una vez se hay hecho todo.
+        *   8. Preguntar si quiero cigrar otra cadena.
+        *
+        * FIN
+        * */
+
+        Scanner scn = new Scanner(System.in);
+        String texto, resultado = "";
+        int codigo;
+        char c;
+
+        do{
+            System.out.println("Intrdozca una cadena a cifrar");
+            texto = scn.nextLine();
+
+            for(int i = 0;i<texto.length();i++){
+                c = texto.charAt(i); // int a = array[8]
+                codigo = (int) c;
+                if(i % 2 == 0){
+                    int contador = 0;
+                    while(contador < i){
+                        codigo++;
+                        contador++;
+                    }
+
+                }else{
+                    codigo--;
+                }
+
+                resultado = resultado + codigo;
+
+                if(i < texto.length() - 1){
+                    resultado = resultado + "-";
+                }
+
+            }
+            System.out.println("Cadena cifrada: "+resultado);
+
+            System.out.println("¿Quieres cifrar otra cadena? (Escribe STOP para salir):");
+            texto = scn.nextLine();
+
+        }while(!texto.equals("STOP"));
+
+
+
+
+
+
+
+
+
+
     }
 }
