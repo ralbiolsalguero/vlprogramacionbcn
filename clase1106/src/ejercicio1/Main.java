@@ -4,17 +4,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-
         Scanner scn = new Scanner(System.in);
-        int dni, resto;
+        char c;
+        int num;
 
         System.out.println("Introduzca el número del DNI");
-        dni = scn.nextInt();
+        num = scn.nextInt();
 
-
-        System.out.println("Número: "+dni+" Letra: "+calcularLetra(dni));
-
+        System.out.println("Introduza la letra de su DNI");
+        c = scn.next().toUpperCase().charAt(0);
 
     }
 
@@ -31,4 +29,13 @@ public class Main {
 
     //MÉTODO QUE LE PASEMOS EL NÚMERO Y LA LETRA POR OTRO, Y TENDREMOS QUE DECIR
     //SI EL DNI, ES CORRECTO O NO LO ES
+
+    static boolean verificarDNI(int dni, char letra){
+
+        boolean resultado = calcularLetra(dni) == letra;
+
+        return resultado;
+
+    }
+
 }
