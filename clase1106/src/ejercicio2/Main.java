@@ -20,5 +20,15 @@ public class Main {
         Una vez creada la clase, escribe un programa para probarla.
         *
         * */
+
+        //Objeto con constructor por defecto
+        Nif nif = new Nif();
+        nif.leer();
+        System.out.println(nif);
+
+        //Objeto con constructor con parametros
+        Nif nif2 = new Nif(12345678);
+        System.out.println(nif2);
+
     }
 }
